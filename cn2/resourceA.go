@@ -1,9 +1,11 @@
 package cn2
 
 import (
+	"fmt"
+
 	"github.com/michaelhenkel/generic-test/converter"
 	"github.com/michaelhenkel/generic-test/models"
-	contrail "ssd-git.juniper.net/contrail/cn2"
+	contrail "ssd-git.juniper.net/contrail/cn2/contrail/pkg/apis/core/v1alpha1"
 )
 
 type ResourceAReconciler[R models.CN2Resource] struct {
@@ -11,7 +13,8 @@ type ResourceAReconciler[R models.CN2Resource] struct {
 }
 
 func NewResourceAReconciler() *ResourceAReconciler[models.ResourceA] {
-	contrail.VirtualNetwork{}
+	vn := contrail.VirtualNetwork{}
+	fmt.Println(vn)
 	var reconciler ResourceAReconciler[models.ResourceA]
 	return &reconciler
 }
